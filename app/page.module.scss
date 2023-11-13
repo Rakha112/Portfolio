@@ -1,0 +1,20 @@
+@use "./scss/util/" as *;
+
+.main {
+  background-color: #1b2430;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .backDrop {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba($color: #000, $alpha: 0.2);
+    margin: 2rem;
+    border-radius: 2rem;
+  }
+}
