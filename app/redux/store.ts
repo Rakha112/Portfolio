@@ -1,11 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import navbarReducer from "./features/navbar";
-import lenisReducer from "./features/lenis";
 
 const store = configureStore({
   reducer: {
     navbarReducer,
-    lenisReducer,
   },
   devTools: process.env.NODE_ENV !== "production",
 });

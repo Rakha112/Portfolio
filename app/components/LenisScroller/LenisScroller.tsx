@@ -1,56 +1,77 @@
 "use client";
-import Lenis from "@studio-freight/lenis";
-import { useRef, useLayoutEffect, useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
-import useAppDispatch from "@/app/hooks/useAppDispatch";
-import { setLenis } from "@/app/redux/features/lenis";
 import useAppSelector from "@/app/hooks/useAppSelector";
+import Lenis from "@studio-freight/lenis";
+import { usePathname, useSearchParams } from "next/navigation";
+import router from "next/router";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useState,
+} from "react";
 
-export const LenisScroller = () => {
+export const lenisCTX = createContext<Lenis | null>(null);
+
+export const useLenis = () => useContext(lenisCTX);
+
+export default function LenisScroller({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const [lenis, setLenis] = useState<Lenis | null>(null);
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const isNavBarOpen = useAppSelector(
     (state) => state.navbarReducer.isNavBarOpen
   );
-  const dispatch = useAppDispatch();
-  const lenis = useRef<Lenis | null>(null);
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     if (isNavBarOpen) {
-      lenis.current?.stop();
+      lenis?.stop();
     } else {
-      lenis.current?.start();
+      lenis?.start();
     }
-  }, [isNavBarOpen]);
+  }, [isNavBarOpen, lenis]);
 
   useEffect(() => {
-    lenis.current?.stop();
+    lenis?.stop();
     setTimeout(() => {
-      lenis.current?.start();
+      lenis?.start();
     }, 5000);
-  }, []);
+  }, [lenis]);
 
   useLayoutEffect(() => {
-    if (lenis.current) lenis.current!.scrollTo(0, { immediate: true });
+    if (lenis) lenis!.scrollTo(0, { immediate: true });
   }, [pathname, searchParams, lenis]);
 
   useLayoutEffect(() => {
-    lenis.current = new Lenis();
-    lenis.current.scrollTo(0, { immediate: true });
-    dispatch(setLenis(lenis.current));
+    const lenis = new Lenis();
+
+    setLenis(lenis);
+
+    const resize = setInterval(() => {
+      lenis.resize();
+    }, 150);
 
     function raf(time: number) {
-      lenis.current!.raf(time);
+      lenis.raf(time);
       requestAnimationFrame(raf);
     }
 
     requestAnimationFrame(raf);
 
+    router.events.on("routeChangeStart", () => {
+      lenis.scrollTo(0, { immediate: true });
+    });
+
     return () => {
-      lenis.current!.destroy();
-      lenis.current = null;
-      dispatch(setLenis(null));
+      clearInterval(resize);
+      setLenis(null);
+      lenis.destroy();
     };
-  }, [dispatch]);
-  return null;
-};
+  }, []);
+
+  return <lenisCTX.Provider value={lenis}>{children}</lenisCTX.Provider>;
+}
