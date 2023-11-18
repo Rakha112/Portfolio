@@ -1,5 +1,15 @@
 @use "./scss/global/" as *;
 
+::-moz-selection {
+  background: #d0c4ad;
+}
+::-webkit-selection {
+  background: #d0c4ad;
+}
+::selection {
+  background: #d0c4ad;
+}
+
 button {
   background: none;
   color: inherit;
