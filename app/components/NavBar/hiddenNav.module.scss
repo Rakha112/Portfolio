@@ -1,0 +1,27 @@
+@use "../../scss/util/" as *;
+@use "../../scss/global/" as *;
+.container {
+  position: fixed;
+  top: 0.8rem;
+  left: 0.8rem;
+  bottom: 0.8rem;
+  right: 0.8rem;
+  border-radius: 2rem;
+  background-color: $warna-putih;
+  z-index: 12;
+  @include breakpoint(medium) {
+    left: unset;
+    width: 100vw;
+    max-width: 500px;
+  }
+  .wrapper {
+    margin: 2rem;
+    h1 {
+      cursor: pointer;
+      margin: 1rem 0;
+      text-transform: uppercase;
+      font-size: clamp(3.5rem, 10vw, 80px);
+      color: $warna-hitam;
+    }
+  }
+}
