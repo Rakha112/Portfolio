@@ -1,0 +1,28 @@
+@use "../../scss/global/" as *;
+@use "../../scss/util/" as *;
+
+.ham {
+  background-color: $warna-putih;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include breakpoint(large) {
+    width: 4rem;
+    height: 4rem;
+  }
+  .bounds {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: all;
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+}
