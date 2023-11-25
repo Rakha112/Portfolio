@@ -7,18 +7,24 @@ import SelamatDatang from "./sections/SelamatDatang/SelamatDatang";
 import Me from "./sections/Me/Me";
 import About from "./sections/About/About";
 import Accordion from "./sections/Accordion/Accordion";
-type Props = {};
+import TechStack from "./sections/TechStack/TechStack";
 
-const page = (props: Props) => {
+const page = () => {
   return (
     <main className={styles.main}>
-      <SelamatDatang />
-      <HiddenNav />
-      <BackDropNav />
-      <NavBar />
-      <Me />
-      <About />
-      <Accordion />
+      <div className={styles.container}>
+        <SelamatDatang />
+        <HiddenNav />
+        <BackDropNav />
+        <NavBar />
+        <Me />
+        <About />
+        <TechStack />
+        <Accordion />
+        <div style={{ height: "100vh", width: "100vw" }} />
+        <div style={{ height: "100vh", width: "100vw" }} />
+        <div style={{ height: "100vh", width: "100vw" }} />
+      </div>
     </main>
   );
 };
