@@ -15,6 +15,7 @@
   right: 0.8rem;
   margin-top: 1rem;
   padding: 1rem;
+  max-width: 100%;
   .name {
     h1 {
       font-size: clamp(rem(24), 1.5vw + 1rem, rem(50));

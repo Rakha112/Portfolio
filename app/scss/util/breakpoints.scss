@@ -4,7 +4,7 @@ $breakpoints: (
   "medium": "37.5rem",
   "large": "64rem",
   "xlarge": "87.5rem",
-  "xxlarge": "1700px",
+  "xxlarge": "1920px",
 );
 
 @mixin breakpoint($size) {
@@ -23,4 +23,4 @@ $breakpoints: (
   @media screen and (min-width: map-get($breakpoints, $size)) and (min-height: 37.5rem) {
     @content;
   }
-} ;
+}
