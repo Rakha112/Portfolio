@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import React from "react";
-import styles from "./HaloText.module.scss";
+import styles from "./halo.module.scss";
 
 type Props = {};
 
@@ -35,7 +35,7 @@ const HaloText = (props: Props) => {
   const text = "halo!";
   const textArray = text.split("");
   return (
-    <section className={styles.haloContainer}>
+    <section className={styles.container}>
       <motion.h1
         className={styles.text}
         variants={containerVariant}

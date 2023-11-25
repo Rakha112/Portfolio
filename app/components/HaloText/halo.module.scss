@@ -1,6 +1,7 @@
-@use "../scss/util/" as *;
+@use "../../scss/util/" as *;
 
-.haloContainer {
+.container {
+  z-index: 2;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -10,5 +11,8 @@
     display: flex;
     font-size: clamp(rem(56), 20vw + 1rem, 22rem);
     color: #bbe1fa;
+    span {
+      cursor: default;
+    }
   }
 }
