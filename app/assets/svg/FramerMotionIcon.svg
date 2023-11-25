@@ -1,0 +1,12 @@
+<svg width="2500" height="2500" viewBox="0 0 2500 2500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_27)">
+<path d="M2500 0V1250L1875 1875L1250 2500L625 1875L1250 1250L2500 0Z" fill="#F5F2EE"/>
+<path d="M2500 1250V2500L1875 1875L2500 1250Z" fill="#F5F2EE"/>
+<path d="M1250 1250L625 1875L0 2500V0L625 625L1250 1250Z" fill="#F5F2EE"/>
+</g>
+<defs>
+<clipPath id="clip0_1_27">
+<rect width="2500" height="2500" fill="white"/>
+</clipPath>
+</defs>
+</svg>
