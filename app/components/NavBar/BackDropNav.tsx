@@ -21,19 +21,13 @@ const BackDropNav = () => {
             dispatch(closeNavBar());
           }}
           initial={{
-            backgroundColor: "rgba(0,0,0,0)",
-            backdropFilter: "blur(0px)",
-            WebkitBackdropFilter: "blur(0px)",
+            backgroundColor: "#30303000",
           }}
           animate={{
-            backgroundColor: "rgba(0,0,0,0.2)",
-            backdropFilter: "blur(12px)",
-            WebkitBackdropFilter: "blur(12px)",
+            backgroundColor: "#303030b3",
           }}
           exit={{
-            backgroundColor: "rgba(0,0,0,0)",
-            backdropFilter: "blur(0px)",
-            WebkitBackdropFilter: "blur(0px)",
+            backgroundColor: "#30303000",
           }}
           transition={{
             duration: 1,

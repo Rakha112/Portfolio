@@ -1,6 +1,7 @@
 @use "../../scss/util/" as *;
 @use "../../scss/global/" as *;
 .container {
+  will-change: transform;
   position: fixed;
   top: 0.8rem;
   left: 0.8rem;

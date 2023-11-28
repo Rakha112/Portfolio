@@ -2,6 +2,7 @@
 @use "../../scss/util/" as *;
 
 .container {
+  will-change: transform;
   border-radius: 20rem;
   // backdrop-filter: blur(12px);
   position: relative;
