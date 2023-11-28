@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import navbarReducer from "./features/navbar";
+import videoPlayerReducer from "./features/videoPlayer";
 
 const store = configureStore({
   reducer: {
     navbarReducer,
+    videoPlayerReducer,
   },
   devTools: process.env.NODE_ENV !== "production",
 });
