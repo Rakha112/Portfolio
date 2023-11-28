@@ -8,6 +8,8 @@ import Me from "./sections/Me/Me";
 import About from "./sections/About/About";
 import Accordion from "./sections/Accordion/Accordion";
 import TechStack from "./sections/TechStack/TechStack";
+import Work from "./sections/Work/Work";
+import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 
 const page = () => {
   return (
@@ -19,8 +21,10 @@ const page = () => {
         <NavBar />
         <Me />
         <About />
-        <TechStack />
         <Accordion />
+        <TechStack />
+        <Work />
+        <VideoPlayer />
         <div style={{ height: "100vh", width: "100vw" }} />
         <div style={{ height: "100vh", width: "100vw" }} />
         <div style={{ height: "100vh", width: "100vw" }} />
