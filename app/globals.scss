@@ -38,6 +38,10 @@ body {
   -ms-overflow-style: none; /* IE 10+ */
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 // CSS for Lenis Smooth Scroll
 
 html.lenis {
