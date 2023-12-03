@@ -19,7 +19,6 @@ const NavBar = () => {
   const blur = useMotionTemplate`blur(${blurValue}px)`;
   const lenis = useLenis();
   const [direction, setDirection] = useState(0);
-  console.log(direction);
 
   const prevDirectionRef = useRef<null | number>(null);
   const handleScroll = useCallback(({ direction }: { direction: number }) => {
