@@ -91,14 +91,14 @@ const Form = () => {
     }
     setShowSpinner(true);
     axios
-      .post(process.env.REACT_APP_API_LOCAL + "/send", {
+      .post(process.env.API_URL + "/send", {
         nama: nama,
         email: email,
         pesan: pesan,
       })
       .then((res) => {
         axios
-          .post(process.env.REACT_APP_API_LOCAL + "/send/penerima", {
+          .post(process.env.API_URL + "/send/penerima", {
             nama: nama,
             email: email,
             pesan: pesan,
