@@ -10,6 +10,7 @@ import Accordion from "./sections/Accordion/Accordion";
 import TechStack from "./sections/TechStack/TechStack";
 import Work from "./sections/Work/Work";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
+import Footer from "./sections/Footer/Footer";
 
 const page = () => {
   return (
@@ -25,9 +26,7 @@ const page = () => {
         <TechStack />
         <Work />
         <VideoPlayer />
-        <div style={{ height: "100vh", width: "100vw" }} />
-        <div style={{ height: "100vh", width: "100vw" }} />
-        <div style={{ height: "100vh", width: "100vw" }} />
+        <Footer />
       </div>
     </main>
   );
