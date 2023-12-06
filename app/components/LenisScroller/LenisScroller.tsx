@@ -1,7 +1,7 @@
 "use client";
 import useAppSelector from "@/app/hooks/useAppSelector";
 import Lenis from "@studio-freight/lenis";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import router from "next/router";
 import {
   createContext,
@@ -22,7 +22,6 @@ export default function LenisScroller({
 }) {
   const [lenis, setLenis] = useState<Lenis | null>(null);
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const isNavBarOpen = useAppSelector(
     (state) => state.navbarReducer.isNavBarOpen
   );
@@ -44,7 +43,7 @@ export default function LenisScroller({
 
   useLayoutEffect(() => {
     if (lenis) lenis!.scrollTo(0, { immediate: true });
-  }, [pathname, searchParams, lenis]);
+  }, [pathname, lenis]);
 
   useLayoutEffect(() => {
     const lenis = new Lenis();
