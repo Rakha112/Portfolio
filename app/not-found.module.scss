@@ -24,7 +24,6 @@
       justify-content: center;
       flex-direction: column;
       a {
-        border-bottom: solid $warna-hitam 1px;
         cursor: pointer;
         color: $warna-hitam;
         font-size: clamp(1rem, 2vw + 1rem, 3rem);
