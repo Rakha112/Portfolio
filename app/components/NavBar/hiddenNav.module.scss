@@ -17,12 +17,28 @@
   }
   .wrapper {
     margin: 2rem;
-    h1 {
-      cursor: pointer;
-      margin: 1rem 0;
-      text-transform: uppercase;
-      font-size: clamp(3.5rem, 10vw, 80px);
-      color: $warna-hitam;
+    .perspectiveText {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      transform-style: preserve-3d;
+      h1 {
+        pointer-events: none;
+        cursor: pointer;
+        margin: 1rem 0;
+        text-transform: uppercase;
+        font-size: clamp(3.5rem, 10vw, 80px);
+        color: $warna-hitam;
+        &:nth-of-type(2) {
+          position: absolute;
+          transform-origin: bottom center;
+          transform: rotateX(-90deg) translateY(50px);
+          color: $warna-hitam;
+        }
+      }
     }
   }
 }

@@ -27,7 +27,7 @@ const Work = (props: Props) => {
     offset: ["start start", "end end"],
   });
   return (
-    <section className={styles.container} ref={ref}>
+    <section className={styles.container} ref={ref} id="works">
       <div className={styles.moving_text}>
         <motion.div
           className={styles.text}

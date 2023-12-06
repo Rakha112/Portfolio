@@ -22,7 +22,7 @@ const TechStack = (props: Props) => {
   const xMobile = useTransform(scrollYProgress, [0, 1], [0, -2000]);
   const xDesktop = useTransform(scrollYProgress, [0, 1], [0, -5000]);
   return (
-    <section className={styles.container} ref={ref}>
+    <section className={styles.container} ref={ref} id="skills">
       <div className={styles.skill_wrap}>
         <motion.div
           className={styles.text}

@@ -17,45 +17,44 @@ const HiddenNav = () => {
   const isNavBarOpen = useAppSelector(
     (state) => state.navbarReducer.isNavBarOpen
   );
-  const containerVariant = {
-    initial: {
-      y: 0,
+
+  const transition = {
+    duration: 0.75,
+    ease: [0.76, 0, 0.24, 1],
+  };
+
+  const perspectiveText = {
+    initial: { rotateX: 0 },
+    hidden: {
+      rotateX: 0,
+      transition: transition,
     },
-    animate: {
-      y: 0,
-      transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.04,
-        staggerDirection: 1,
-      },
+    visible: {
+      rotateX: "90deg",
+      transition: transition,
     },
   };
-  const revealVariants = {
+
+  const firstP = {
     initial: {
-      y: 200,
-    },
-    animate: {
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: [0.6, 0.01, -0.05, 0.9],
-      },
-    },
-  };
-  const revealVariants2 = {
-    initial: {
+      opacity: 1,
       y: 0,
     },
-    animate: {
-      y: -200,
-      transition: {
-        duration: 0.5,
-        ease: [0.6, 0.01, -0.05, 0.9],
-      },
+    hidden: { opacity: 1, y: 0, transition: transition },
+    visible: { opacity: 0, y: "-100%", transition: transition },
+  };
+
+  const secondP = {
+    initial: {
+      opacity: 0,
+    },
+    hidden: { opacity: 0, transition: transition },
+    visible: {
+      opacity: 1,
+      transition: transition,
     },
   };
-  const about = "about";
-  const aboutSplit = about.split("");
+
   return (
     <AnimatePresence>
       {isNavBarOpen && (
@@ -71,7 +70,11 @@ const HiddenNav = () => {
         >
           <Close />
           <div className={styles.wrapper}>
-            <button
+            <motion.button
+              initial="initial"
+              animate="hidden"
+              whileHover="visible"
+              whileFocus="visible"
               onClick={() => {
                 dispatch(closeNavBar());
                 setTimeout(() => {
@@ -79,19 +82,59 @@ const HiddenNav = () => {
                 }, 500);
               }}
             >
-              <h1>About</h1>
-            </button>
-            <button
+              <motion.div
+                className={styles.perspectiveText}
+                variants={perspectiveText}
+              >
+                <motion.h1 variants={firstP}>About</motion.h1>
+                <motion.h1 variants={secondP}>About</motion.h1>
+              </motion.div>
+            </motion.button>
+            <motion.button
+              initial="initial"
+              animate="hidden"
+              whileHover="visible"
+              whileFocus="visible"
               onClick={() => {
                 dispatch(closeNavBar());
                 setTimeout(() => {
-                  lenis?.scrollTo("#work", { duration: 3 });
+                  lenis?.scrollTo("#skills", { duration: 3 });
                 }, 500);
               }}
             >
-              <h1>Work</h1>
-            </button>
-            <button
+              <motion.div
+                className={styles.perspectiveText}
+                variants={perspectiveText}
+              >
+                <motion.h1 variants={firstP}>Skills</motion.h1>
+                <motion.h1 variants={secondP}>Skills</motion.h1>
+              </motion.div>
+            </motion.button>
+            <motion.button
+              initial="initial"
+              animate="hidden"
+              whileHover="visible"
+              whileFocus="visible"
+              onClick={() => {
+                dispatch(closeNavBar());
+                setTimeout(() => {
+                  lenis?.scrollTo("#works", { duration: 3 });
+                }, 500);
+              }}
+            >
+              <motion.div
+                className={styles.perspectiveText}
+                variants={perspectiveText}
+              >
+                <motion.h1 variants={firstP}>Works</motion.h1>
+                <motion.h1 variants={secondP}>Works</motion.h1>
+              </motion.div>
+            </motion.button>
+            <motion.button
+              initial="initial"
+              animate="hidden"
+              whileHover="visible"
+              whileFocus="visible"
               onClick={() => {
                 dispatch(closeNavBar());
                 setTimeout(() => {
@@ -99,8 +142,14 @@ const HiddenNav = () => {
                 }, 500);
               }}
             >
-              <h1>Contact</h1>
-            </button>
+              <motion.div
+                className={styles.perspectiveText}
+                variants={perspectiveText}
+              >
+                <motion.h1 variants={firstP}>Contact</motion.h1>
+                <motion.h1 variants={secondP}>Contact</motion.h1>
+              </motion.div>
+            </motion.button>
           </div>
         </motion.div>
       )}
