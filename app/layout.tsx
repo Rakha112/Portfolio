@@ -7,11 +7,8 @@ import { GeistSans } from "geist/font/sans";
 
 export const metadata: Metadata = {
   title: "Rakha Wibowo.",
-  description: "Welcome to Rakha Wibowo Portfolio",
-  robots: {
-    index: true,
-    follow: true,
-  },
+  description:
+    "Selamat datang di Portofolio saya, Saya Farid Fawwaz Rakha Wibowo, seorang Fullstack Developer dan Food Fotografer",
 };
 
 export default function RootLayout({
