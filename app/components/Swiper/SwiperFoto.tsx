@@ -32,14 +32,15 @@ const SwiperFoto = () => {
             <div key={index}>
               <h1>{item.nama}</h1>
               <div className={styles.foto_container}>
-                {item.foto.map((foto, index) => {
+                {item.foto.map((foto, indexx) => {
                   return (
-                    <div key={index} className={styles.foto_wrapper}>
+                    <div key={indexx} className={styles.foto_wrapper}>
                       <Image
                         draggable={false}
                         className={styles.foto}
                         src={foto}
                         alt={item.nama}
+                        placeholder="blur"
                       />
                     </div>
                   );
