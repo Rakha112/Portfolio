@@ -41,6 +41,7 @@ const SwiperFoto = () => {
                         src={foto}
                         alt={item.nama}
                         placeholder="blur"
+                        priority
                       />
                     </div>
                   );

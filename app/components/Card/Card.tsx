@@ -48,7 +48,13 @@ const Card = ({ i, progress, range, targetScale, item }: Props) => {
               <h1>{item.nama}</h1>
               {item.icon && (
                 <div className={styles.app__icon}>
-                  <Image src={item.icon} width={10} height={10} alt="Icon" />
+                  <Image
+                    src={item.icon}
+                    width={10}
+                    height={10}
+                    alt="Icon"
+                    priority
+                  />
                 </div>
               )}
             </div>
@@ -113,6 +119,7 @@ const Card = ({ i, progress, range, targetScale, item }: Props) => {
                         width={20}
                         height={20}
                         alt="Icon"
+                        priority
                       />
                     </button>
                   );
@@ -132,6 +139,7 @@ const Card = ({ i, progress, range, targetScale, item }: Props) => {
               alt="Image"
               fill
               style={{ objectFit: "cover" }}
+              priority
             />
           </motion.div>
           {item.video && (
