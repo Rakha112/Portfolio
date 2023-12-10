@@ -11,6 +11,7 @@ import TechStack from "./sections/TechStack/TechStack";
 import Work from "./sections/Work/Work";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import Footer from "./sections/Footer/Footer";
+import Foto from "./sections/Fotografi/Foto";
 
 const page = () => {
   return (
@@ -26,6 +27,7 @@ const page = () => {
         <TechStack />
         <Work />
         <VideoPlayer />
+        <Foto />
         <Footer />
       </div>
     </main>
