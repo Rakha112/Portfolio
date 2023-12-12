@@ -6,8 +6,7 @@ import { motion } from "framer-motion";
 import localFont from "next/font/local";
 import Toast from "../Toast/Toast";
 import axios from "axios";
-import Lottie from "lottie-react";
-import Spinner from "../../assets/animations/Spinner.json";
+import Loader from "../Loader/Loader";
 const GeistSans = localFont({ src: "../../assets/fonts/Geist-Regular.otf" });
 const Form = () => {
   const [isNama, setIsNama] = useState(false);
@@ -212,9 +211,7 @@ const Form = () => {
           }}
         >
           {showSpinner ? (
-            <div className={styles.spiiner}>
-              <Lottie animationData={Spinner} loop={true} />
-            </div>
+            <Loader />
           ) : (
             <>
               <motion.div className={styles.overlay} variants={overlay} />
