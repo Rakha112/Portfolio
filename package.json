@@ -9,13 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.0.1",
-    "@smakss/react-scroll-direction": "^4.0.3",
-    "@studio-freight/lenis": "^1.0.33",
-    "axios": "^1.6.5",
-    "framer-motion": "^10.18.0",
-    "geist": "^1.2.1",
-    "next": "14.0.4",
+    "@reduxjs/toolkit": "^2.2.0",
+    "@smakss/react-scroll-direction": "^4.0.4",
+    "@studio-freight/lenis": "^1.0.34",
+    "axios": "^1.6.7",
+    "framer-motion": "^11.0.3",
+    "geist": "^1.2.2",
+    "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
     "react-player": "^2.14.1",
@@ -27,7 +27,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
-    "sass": "^1.69.7",
+    "sass": "^1.70.0",
     "typescript": "^5"
   }
 }
