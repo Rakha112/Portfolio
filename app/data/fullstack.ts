@@ -48,7 +48,7 @@ export const dataFullstack: DataFullstack[] = [
     ],
     icon: CuacaIcon,
     button: [
-      { nama: "Web", link: "https://cuaca.rakhawibowo.tech/" },
+      { nama: "Web", link: "https://cuaca.rakhawibowo.com/" },
       {
         nama: "Android",
         link: "https://drive.google.com/file/d/1Bb9RDqRAfzBdxB7siR5FZeYSmGGPfFqn/view?usp=share_link",
@@ -67,7 +67,7 @@ export const dataFullstack: DataFullstack[] = [
     ],
     icon: CatetinIcon,
     button: [
-      { nama: "Web", link: "https://catetin.rakhawibowo.tech/" },
+      { nama: "Web", link: "https://catetin.rakhawibowo.com/" },
       {
         nama: "Android",
         link: "https://drive.google.com/file/d/1SS4XVmfiDIwaGnVzAnKkokvkmGOVWVEk/view?usp=share_link",
