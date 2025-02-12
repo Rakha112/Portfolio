@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
-import styles from "./not-found.module.scss";
 import Link from "next/link";
+import styles from "./not-found.module.scss";
 
 const NotFound = () => {
   return (

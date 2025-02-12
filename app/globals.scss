@@ -42,28 +42,6 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-// CSS for Lenis Smooth Scroll
-
-html.lenis {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
-}
-
 // #252B48
 // #096b91
 // #00b3c1

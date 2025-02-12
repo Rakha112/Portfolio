@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.scss";
-import Cursor from "./components/Cursor/Cursor";
-import Providers from "./redux/Provider";
-import LenisScroller from "./components/LenisScroller/LenisScroller";
+import "lenis/dist/lenis.css";
+
+import Cursor from "@/components/Cursor/Cursor";
 import { GeistSans } from "geist/font/sans";
+import ReactLenis from "lenis/react";
 
 export const metadata: Metadata = {
   title: "Rakha Wibowo.",
@@ -19,10 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={GeistSans.className}>
-        <Providers>
-          <Cursor />
-          <LenisScroller>{children}</LenisScroller>
-        </Providers>
+        <Cursor />
+        <ReactLenis root>{children}</ReactLenis>
       </body>
     </html>
   );
