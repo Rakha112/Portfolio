@@ -3,9 +3,7 @@
 import { motion } from "framer-motion";
 import styles from "./halo.module.scss";
 
-type Props = {};
-
-const HaloText = (props: Props) => {
+const HaloText = () => {
   const containerVariant = {
     initial: {
       y: 0,
