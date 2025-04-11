@@ -26,7 +26,7 @@ const Magnetic = ({ children }: Props) => {
   const { x, y } = position;
   return (
     <motion.div
-      style={{ position: "relative" }}
+      className="relative"
       ref={ref}
       onMouseMove={handleMouse}
       onMouseLeave={reset}

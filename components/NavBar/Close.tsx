@@ -1,10 +1,10 @@
 "use client";
 
+import useNavbarStore from "@/store/navbarStore";
 import Image from "next/image";
 import CloseIcon from "../../assets/svg/Close.svg";
-import Magnetic from "../Magnetic/Magnetic";
 import styles from "./close.module.scss";
-import useNavbarStore from "@/store/navbarStore";
+import Magnetic from "./Magnetic";
 
 const Close = () => {
   const closeNavBar = useNavbarStore((state) => state.closeNavBar);

@@ -1,11 +1,11 @@
 "use client";
 
 import useWindowSize from "@/hooks/useWindowSize";
+import useNavbarStore from "@/store/navbarStore";
 import Image from "next/image";
 import HamIcon from "../../assets/svg/Ham.svg";
-import Magnetic from "../Magnetic/Magnetic";
 import styles from "./ham.module.scss";
-import useNavbarStore from "@/store/navbarStore";
+import Magnetic from "./Magnetic";
 
 const Ham = () => {
   const { width } = useWindowSize();

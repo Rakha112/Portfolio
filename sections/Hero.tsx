@@ -3,11 +3,10 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Playfair_Display } from "next/font/google";
 import { useRef } from "react";
-import styles from "./me.module.scss";
 
 const playfairDisplay = Playfair_Display({ subsets: ["latin"] });
 
-const Me = () => {
+const Hero = () => {
   const meRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: meRef,
@@ -18,7 +17,11 @@ const Me = () => {
   const x3 = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   return (
-    <section className={styles.me} ref={meRef} id="about">
+    <section
+      className="flex h-screen w-screen cursor-default flex-col items-center justify-center gap-6 bg-warnaHitam text-[8.5vw] leading-none text-warnaPutih md:gap-8 lg:gap-12 xl:gap-16"
+      ref={meRef}
+      id="about"
+    >
       <motion.h1
         initial={{ x: 300, opacity: 0 }}
         animate={{
@@ -28,8 +31,12 @@ const Me = () => {
         }}
         style={{ x: x1 }}
       >
-        Halo! saya{" "}
-        <motion.span className={playfairDisplay.className}>Rakha</motion.span>
+        Hi! I&apos;m{" "}
+        <span
+          className={`!italic ${playfairDisplay.className} border-rad rounded-full border border-warnaPutih px-4 lg:px-12`}
+        >
+          Rakha
+        </span>
       </motion.h1>
       <motion.h1
         initial={{ x: -300, opacity: 0 }}
@@ -40,7 +47,12 @@ const Me = () => {
         }}
         style={{ x: x2 }}
       >
-        <span className={playfairDisplay.className}>FullStack Developer</span>
+        <span
+          className={`!italic ${playfairDisplay.className} border-rad rounded-full border border-warnaPutih px-4 lg:px-12`}
+        >
+          Freelance React
+        </span>{" "}
+        and
       </motion.h1>
       <motion.h1
         initial={{ x: 300, opacity: 0 }}
@@ -51,10 +63,15 @@ const Me = () => {
         }}
         style={{ x: x3 }}
       >
-        dan <span className={playfairDisplay.className}>Food Fotografer </span>
+        {" "}
+        <span
+          className={`!italic ${playfairDisplay.className} border-rad rounded-full border border-warnaPutih px-4 lg:px-12`}
+        >
+          React Native Developer
+        </span>
       </motion.h1>
     </section>
   );
 };
 
-export default Me;
+export default Hero;
