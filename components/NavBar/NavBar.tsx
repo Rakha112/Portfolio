@@ -54,7 +54,7 @@ const NavBar = () => {
       <Magnetic>
         <div className="font-geist text-[clamp(1.5rem,_1.5vw_+_1rem,_3.125rem)] text-warnaPutih">
           <div className="pointer-events-auto absolute left-0 right-0 h-full w-full hover:scale-150" />
-          <h1>Rakha Wibowo.</h1>
+          <h1 className="font-geist font-bold">Rakha Wibowo.</h1>
         </div>
       </Magnetic>
       <Ham />

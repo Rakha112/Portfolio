@@ -33,7 +33,7 @@ const Hero = () => {
       >
         Hi! I&apos;m{" "}
         <span
-          className={`!italic ${playfairDisplay.className} border-rad rounded-full border border-warnaPutih px-4 lg:px-12`}
+          className={`${playfairDisplay.className} border-rad rounded-full border border-warnaPutih px-4 !italic lg:px-12`}
         >
           Rakha
         </span>
@@ -48,7 +48,7 @@ const Hero = () => {
         style={{ x: x2 }}
       >
         <span
-          className={`!italic ${playfairDisplay.className} border-rad rounded-full border border-warnaPutih px-4 lg:px-12`}
+          className={`${playfairDisplay.className} border-rad rounded-full border border-warnaPutih px-4 !italic lg:px-12`}
         >
           Freelance React
         </span>{" "}
@@ -65,7 +65,7 @@ const Hero = () => {
       >
         {" "}
         <span
-          className={`!italic ${playfairDisplay.className} border-rad rounded-full border border-warnaPutih px-4 lg:px-12`}
+          className={`${playfairDisplay.className} border-rad rounded-full border border-warnaPutih px-4 !italic lg:px-12`}
         >
           React Native Developer
         </span>
