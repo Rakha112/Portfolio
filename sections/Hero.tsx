@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Playfair_Display } from "next/font/google";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const playfairDisplay = Playfair_Display({ subsets: ["latin"] });
 
@@ -16,9 +16,15 @@ const Hero = () => {
   const x2 = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const x3 = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+  }, []);
+
   return (
     <section
-      className="flex h-screen w-screen cursor-default flex-col items-center justify-center gap-6 bg-warnaHitam text-[8.5vw] leading-none text-warnaPutih md:gap-8 lg:gap-12 xl:gap-16"
+      className="flex h-screen w-screen cursor-default flex-col items-center justify-center gap-6 overflow-hidden bg-warnaHitam text-[8.5vw] leading-none text-warnaPutih md:gap-8 lg:gap-12 xl:gap-16"
       ref={meRef}
       id="about"
     >
