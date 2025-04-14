@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+::-moz-selection {
+  background: #d0c4ad;
+}
+::-webkit-selection {
+  background: #d0c4ad;
+}
+::selection {
+  background: #d0c4ad;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  background-color: $warna-hitam;
+  font-size: 100%;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,4 +45,10 @@ button {
   padding: 0;
   font: inherit;
   cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
