@@ -1,9 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useLenis } from "lenis/react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 const Welcome = () => {
+  const [show, setSHow] = useState(true);
+  const lenis = useLenis();
+
   const text = "WELCOME";
 
   const textArray = text.split("");
@@ -35,18 +39,26 @@ const Welcome = () => {
     },
   };
 
-  const [show, setSHow] = useState(true);
-
   useEffect(() => {
     setTimeout(() => {
       setSHow(false);
     }, 2000);
   }, []);
 
+  useLayoutEffect(() => {
+    setTimeout(() => {
+      lenis?.stop();
+    }, 1);
+    setTimeout(() => {
+      lenis?.start();
+    }, 5000);
+  }, [lenis]);
+
   return (
     <>
       {show && (
-        <div className="flex h-screen w-screen items-center justify-center bg-warnaHitam">
+        // <section className="flex h-screen w-screen max-w-[1920px] items-center justify-center overflow-hidden">
+        <section className="fixed overflow-hidden z-[2] top-0 w-screen max-w-full h-screen max-h-full flex items-center justify-center flex-col">
           <motion.div
             variants={containerVariant}
             initial={"initial"}
@@ -63,7 +75,7 @@ const Welcome = () => {
               </motion.span>
             ))}
           </motion.div>
-        </div>
+        </section>
       )}
     </>
   );
