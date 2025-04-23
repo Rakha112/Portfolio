@@ -21,7 +21,7 @@ const AnimatedTextBlock: React.FC<AnimatedTextBlockProps> = ({
         const line = (
           <p
             key={lineIndex}
-            className="cursor-default font-geist text-[5vw] font-medium leading-none text-white lg:text-[3vw] 2xl:text-[58px]"
+            className="cursor-default font-geist text-[4vw] font-medium leading-none text-white lg:text-[3vw] 2xl:text-[58px]"
           >
             {text.split("").map((item, index) => (
               <AboutText

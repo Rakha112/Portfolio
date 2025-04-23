@@ -20,7 +20,6 @@ const About = () => {
     "Expert in smooth, eye catching animations",
     "Based in Purwokerto, Indonesia",
     "With a passion for tech, web & mobile apps",
-    "And a hobby in food photography",
   ];
 
   // Concatenate all text strings
@@ -44,7 +43,7 @@ const About = () => {
         <Image
           src={ProfilePhoto}
           alt="Profile"
-          className="h-auto w-[60vw] max-w-[400px]"
+          className="h-auto w-[60vw] max-w-[300px] xl:max-w-[400px]"
         />
       </div>
     </section>

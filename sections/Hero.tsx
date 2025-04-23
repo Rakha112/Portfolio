@@ -24,7 +24,7 @@ const Hero = () => {
 
   return (
     <section
-      className="flex h-screen w-screen cursor-default flex-col items-center justify-center gap-6 overflow-hidden bg-warnaHitam text-[8.5vw] leading-none text-warnaPutih md:gap-8 lg:gap-12 xl:gap-16"
+      className="flex h-screen w-screen cursor-default flex-col items-center justify-center gap-6 overflow-hidden bg-warnaHitam text-[min(8.5vw,200px)] leading-none text-warnaPutih md:gap-8 lg:gap-12 xl:gap-16"
       ref={meRef}
       id="about"
     >
