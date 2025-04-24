@@ -38,15 +38,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-button {
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-}
-
 * {
   box-sizing: border-box;
   padding: 0;

@@ -5,6 +5,7 @@ import Welcome from "@/components/Welcome";
 import About from "@/sections/About";
 import Hero from "@/sections/Hero";
 import Skills from "@/sections/Skills";
+import Work from "@/sections/Work";
 
 const page = () => {
   return (
@@ -17,6 +18,7 @@ const page = () => {
         <Hero />
         <About />
         <Skills />
+        <Work />
       </div>
     </main>
   );
