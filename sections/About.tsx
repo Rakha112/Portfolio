@@ -33,7 +33,7 @@ const About = () => {
   return (
     <section className="relative h-[300vh] w-screen" ref={ref}>
       <div className="sticky top-0 flex h-screen max-h-full w-screen flex-col-reverse items-center justify-center gap-8 overflow-hidden lg:flex-row-reverse">
-        <div className="flex flex-col gap-[0.8rem] lg:gap-4">
+        <div className="flex flex-col gap-[0.4rem] lg:gap-4">
           <AnimatedTextBlock
             texts={texts}
             scrollYProgress={scrollYProgress}
