@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-moz-selection {
+  background: #d0c4ad;
+}
+::-webkit-selection {
+  background: #d0c4ad;
+}
+::selection {
+  background: #d0c4ad;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  background-color: $warna-hitam;
+  font-size: 100%;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --warna-hitam: #1d1d1d;
+  --warna-hitam-cerah: #303030;
+  --warna-putih: #f5f2ee;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}

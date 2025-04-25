@@ -4,14 +4,19 @@ import useWindowSize from "@/hooks/useWindowSize";
 import useNavbarStore from "@/store/navbarStore";
 import { AnimatePresence, motion } from "framer-motion";
 import Close from "./Close";
-import styles from "./hiddenNav.module.scss";
 import { useLenis } from "lenis/react";
+import { PerspectiveText } from "./PerspectiveText";
+import { useEffect } from "react";
 
 const HiddenNav = () => {
   const isNavBarOpen = useNavbarStore((state) => state.isNavBarOpen);
   const closeNavBar = useNavbarStore((state) => state.closeNavBar);
   const lenis = useLenis();
   const { width } = useWindowSize();
+
+  useEffect(() => {
+    console.log({ isNavBarOpen });
+  }, [isNavBarOpen]);
 
   const transition = {
     duration: 0.75,
@@ -54,7 +59,7 @@ const HiddenNav = () => {
     <AnimatePresence>
       {isNavBarOpen && (
         <motion.div
-          className={styles.container}
+          className="fixed bottom-[0.8rem] left-[0.8rem] right-[0.8rem] top-[0.8rem] z-[12] rounded-[2rem] bg-warnaPutih will-change-transform md:left-[unset] md:w-screen md:max-w-[500px]"
           initial={{ x: width! < 600 ? width : 520, opacity: 1 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: width! < 600 ? width : 520, opacity: 1 }}
@@ -64,7 +69,7 @@ const HiddenNav = () => {
           }}
         >
           <Close />
-          <div className={styles.wrapper}>
+          <div className="m-8">
             <motion.button
               initial="initial"
               animate="hidden"
@@ -77,13 +82,12 @@ const HiddenNav = () => {
                 }, 500);
               }}
             >
-              <motion.div
-                className={styles.perspectiveText}
-                variants={perspectiveText}
-              >
-                <motion.h1 variants={firstP}>About</motion.h1>
-                <motion.h1 variants={secondP}>About</motion.h1>
-              </motion.div>
+              <PerspectiveText
+                text="About"
+                perspectiveText={perspectiveText}
+                firstVariant={firstP}
+                secondVariant={secondP}
+              />
             </motion.button>
             <motion.button
               initial="initial"
@@ -97,13 +101,12 @@ const HiddenNav = () => {
                 }, 500);
               }}
             >
-              <motion.div
-                className={styles.perspectiveText}
-                variants={perspectiveText}
-              >
-                <motion.h1 variants={firstP}>Skills</motion.h1>
-                <motion.h1 variants={secondP}>Skills</motion.h1>
-              </motion.div>
+              <PerspectiveText
+                text="Skills"
+                perspectiveText={perspectiveText}
+                firstVariant={firstP}
+                secondVariant={secondP}
+              />
             </motion.button>
             <motion.button
               initial="initial"
@@ -117,13 +120,12 @@ const HiddenNav = () => {
                 }, 500);
               }}
             >
-              <motion.div
-                className={styles.perspectiveText}
-                variants={perspectiveText}
-              >
-                <motion.h1 variants={firstP}>Works</motion.h1>
-                <motion.h1 variants={secondP}>Works</motion.h1>
-              </motion.div>
+              <PerspectiveText
+                text="Works"
+                perspectiveText={perspectiveText}
+                firstVariant={firstP}
+                secondVariant={secondP}
+              />
             </motion.button>
             <motion.button
               initial="initial"
@@ -137,13 +139,12 @@ const HiddenNav = () => {
                 }, 500);
               }}
             >
-              <motion.div
-                className={styles.perspectiveText}
-                variants={perspectiveText}
-              >
-                <motion.h1 variants={firstP}>Contact</motion.h1>
-                <motion.h1 variants={secondP}>Contact</motion.h1>
-              </motion.div>
+              <PerspectiveText
+                text="Contact"
+                perspectiveText={perspectiveText}
+                firstVariant={firstP}
+                secondVariant={secondP}
+              />
             </motion.button>
           </div>
         </motion.div>

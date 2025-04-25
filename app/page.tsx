@@ -1,33 +1,30 @@
+import Cursor from "@/components/Cursor";
 import BackDropNav from "@/components/NavBar/BackDropNav";
 import HiddenNav from "@/components/NavBar/HiddenNav";
 import NavBar from "@/components/NavBar/NavBar";
-import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
-import styles from "./page.module.scss";
-import About from "@/sections/About/About";
-import Accordion from "@/sections/Accordion/Accordion";
-import Footer from "@/sections/Footer/Footer";
-import Foto from "@/sections/Fotografi/Foto";
-import Me from "@/sections/Me/Me";
-import SelamatDatang from "@/sections/SelamatDatang/SelamatDatang";
-import TechStack from "@/sections/TechStack/TechStack";
-import Work from "@/sections/Work/Work";
+import VideoPlayer from "@/components/VideoPlayer";
+import Welcome from "@/components/Welcome";
+import About from "@/sections/About";
+import Footer from "@/sections/Footer";
+import Hero from "@/sections/Hero";
+import Skills from "@/sections/Skills";
+import Work from "@/sections/Work";
 
 const page = () => {
   return (
-    <main className={styles.main}>
-      <div className={styles.container}>
-        <SelamatDatang />
-        <HiddenNav />
-        <BackDropNav />
+    <main className="relative flex max-w-[100vw] flex-col items-center justify-center bg-warnaHitam">
+      <div className="flex flex-col items-center justify-center">
+        <Cursor />
         <NavBar />
-        <Me />
+        <HiddenNav />
+        <Welcome />
+        <Hero />
         <About />
-        <Accordion />
-        <TechStack />
+        <Skills />
         <Work />
-        <VideoPlayer />
-        <Foto />
         <Footer />
+        <BackDropNav />
+        <VideoPlayer />
       </div>
     </main>
   );

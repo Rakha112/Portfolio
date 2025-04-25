@@ -6,11 +6,10 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { useCallback, useEffect, useRef, useState } from "react";
-import Magnetic from "../Magnetic/Magnetic";
-import Ham from "./Ham";
-import styles from "./navBar.module.scss";
 import { useLenis } from "lenis/react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import Ham from "./Ham";
+import Magnetic from "./Magnetic";
 
 const NavBar = () => {
   const { scrollYProgress } = useScroll();
@@ -42,7 +41,7 @@ const NavBar = () => {
 
   return (
     <motion.nav
-      className={styles.container}
+      className="fixed left-[0.8rem] right-[0.8rem] top-0 z-10 mt-4 flex items-center justify-between rounded-full p-4 will-change-transform"
       style={{ backdropFilter: blur, WebkitBackdropFilter: blur }}
       initial={{ y: -300 }}
       animate={{ y: direction === 0 || direction === -1 ? 0 : -200 }}
@@ -53,9 +52,9 @@ const NavBar = () => {
       }}
     >
       <Magnetic>
-        <div className={styles.name}>
-          <div className={styles.bounds} />
-          <h1>Rakha Wibowo.</h1>
+        <div className="font-geist text-[clamp(1.5rem,_1.5vw_+_1rem,_3.125rem)] text-warnaPutih">
+          <div className="pointer-events-auto absolute left-0 right-0 h-full w-full hover:scale-150" />
+          <h1 className="font-geist font-bold">Rakha Wibowo.</h1>
         </div>
       </Magnetic>
       <Ham />
