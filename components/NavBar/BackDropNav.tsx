@@ -2,10 +2,21 @@
 
 import useNavbarStore from "@/store/navbarStore";
 import { AnimatePresence, motion } from "framer-motion";
+import { useLenis } from "lenis/react";
+import { useEffect } from "react";
 
 const BackDropNav = () => {
+  const lenis = useLenis();
   const isNavBarOpen = useNavbarStore((state) => state.isNavBarOpen);
   const closeNavBar = useNavbarStore((state) => state.closeNavBar);
+
+  useEffect(() => {
+    if (isNavBarOpen) {
+      lenis?.stop();
+    } else {
+      lenis?.start();
+    }
+  }, [isNavBarOpen, lenis]);
 
   return (
     <AnimatePresence>
