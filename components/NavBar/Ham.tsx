@@ -11,7 +11,6 @@ const Ham = () => {
   const openNavBar = useNavbarStore((state) => state.openNavBar);
 
   const onClick = () => {
-    console.log("open");
     openNavBar();
   };
 

@@ -3,20 +3,15 @@
 import useWindowSize from "@/hooks/useWindowSize";
 import useNavbarStore from "@/store/navbarStore";
 import { AnimatePresence, motion } from "framer-motion";
-import Close from "./Close";
 import { useLenis } from "lenis/react";
+import Close from "./Close";
 import { PerspectiveText } from "./PerspectiveText";
-import { useEffect } from "react";
 
 const HiddenNav = () => {
   const isNavBarOpen = useNavbarStore((state) => state.isNavBarOpen);
   const closeNavBar = useNavbarStore((state) => state.closeNavBar);
   const lenis = useLenis();
   const { width } = useWindowSize();
-
-  useEffect(() => {
-    console.log({ isNavBarOpen });
-  }, [isNavBarOpen]);
 
   const transition = {
     duration: 0.75,
