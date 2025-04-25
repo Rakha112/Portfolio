@@ -74,6 +74,8 @@ const Form = () => {
     },
   };
 
+  console.log(process.env.API_URL);
+
   const handleSubmit = () => {
     const regex =
       /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -90,14 +92,14 @@ const Form = () => {
     }
     setShowSpinner(true);
     axios
-      .post(process.env.API_URL + "/send", {
+      .post(`${process.env.API_URL}/send`, {
         nama: nama,
         email: email,
         pesan: pesan,
       })
       .then(() => {
         axios
-          .post(process.env.API_URL + "/send/penerima", {
+          .post(`${process.env.API_URL}/send`, {
             nama: nama,
             email: email,
             pesan: pesan,
