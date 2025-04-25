@@ -15,6 +15,7 @@ import PrismaIcon from "../assets/svg/PrismaIcon.svg";
 import ReactIcon from "../assets/svg/ReactIcon.svg";
 import ReactNativeIcon from "../assets/svg/ReactNativeIcon.svg";
 import SassIcon from "../assets/svg/SassIcon.svg";
+import TailwindIcon from "../assets/svg/Tailwind.svg";
 import TypesciptIcon from "../assets/svg/TypesciptIcon.svg";
 import VSCodeIcon from "../assets/svg/VSCodeIcon.svg";
 import WorkbenchIcon from "../assets/svg/WorkbenchIcon.svg";
@@ -39,6 +40,10 @@ export const frontEnd = [
   {
     name: "SASS",
     image: SassIcon,
+  },
+  {
+    name: "Tailwind",
+    image: TailwindIcon,
   },
   {
     name: "Next.Js",
