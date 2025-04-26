@@ -104,7 +104,7 @@ const Form = () => {
           })
           .then(() => {
             setShowSpinner(false);
-            setToastText("Pesan Berhasil Terkirim");
+            setToastText("Message Sent Successfully");
             setShowToast(true);
             setNama("");
             setEmail("");
