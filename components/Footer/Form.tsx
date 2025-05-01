@@ -3,8 +3,8 @@
 import axios from "axios";
 import { motion, Transition, Variants } from "framer-motion";
 import { useState } from "react";
-import Loader from "./Loader";
-import Toast from "./Toast";
+import Loader from "../Loader";
+import Toast from "../Toast";
 
 const Form = () => {
   const [isNama, setIsNama] = useState(false);
