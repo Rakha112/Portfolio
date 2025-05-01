@@ -1,4 +1,4 @@
-import { motion, Variants } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 interface PerspectiveTextProps {
   text: string;

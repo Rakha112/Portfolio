@@ -5,13 +5,16 @@ import {
   useMotionTemplate,
   useScroll,
   useTransform,
-} from "framer-motion";
+} from "motion/react";
 import { useLenis } from "lenis/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Ham from "./Ham";
 import Magnetic from "./Magnetic";
+import { usePathname } from "next/navigation";
 
 const NavBar = () => {
+  const pathname = usePathname();
+  console.log(pathname);
   const { scrollYProgress } = useScroll();
   const blurValue = useTransform(scrollYProgress, [0, 0.01], [0, 12]);
   const blur = useMotionTemplate`blur(${blurValue}px)`;
@@ -43,7 +46,7 @@ const NavBar = () => {
     <motion.nav
       className="fixed left-[0.8rem] right-[0.8rem] top-0 z-10 mt-4 flex items-center justify-between rounded-full p-4 will-change-transform"
       style={{ backdropFilter: blur, WebkitBackdropFilter: blur }}
-      initial={{ y: -300 }}
+      initial={{ y: pathname === "/animation" ? 0 : -300 }}
       animate={{ y: direction === 0 || direction === -1 ? 0 : -200 }}
       transition={{
         delay: direction === 0 ? 3.5 : 0,

@@ -1,7 +1,7 @@
 "use client";
 
 import axios from "axios";
-import { motion, Transition, Variants } from "framer-motion";
+import { motion, Transition, Variants } from "motion/react";
 import { useState } from "react";
 import Loader from "../Loader";
 import Toast from "../Toast";

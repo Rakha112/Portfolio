@@ -2,7 +2,7 @@
 
 import { sosmed } from "@/data/sosmed";
 import useWindowSize from "@/hooks/useWindowSize";
-import { motion, Transition, Variants } from "framer-motion";
+import { motion, Transition, Variants } from "motion/react";
 import Image from "next/image";
 
 const Sosmed = () => {

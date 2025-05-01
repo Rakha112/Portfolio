@@ -5,7 +5,7 @@ import PlayIcon from "@/assets/svg/PlayIcon.svg";
 import { Works } from "@/data/works";
 import useWindowSize from "@/hooks/useWindowSize";
 import useVideoPlayerStore from "@/store/videoPlayerStore";
-import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
+import { motion, MotionValue, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
 import { useRef, useState } from "react";
 

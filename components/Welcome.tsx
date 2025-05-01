@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useLenis } from "lenis/react";
 import { useEffect, useLayoutEffect, useState } from "react";
 
@@ -58,7 +58,7 @@ const Welcome = () => {
     <>
       {show && (
         // <section className="flex h-screen w-screen max-w-[1920px] items-center justify-center overflow-hidden">
-        <section className="fixed overflow-hidden z-[2] top-0 w-screen max-w-full h-screen max-h-full flex items-center justify-center flex-col">
+        <section className="fixed top-0 z-[2] flex h-screen max-h-full w-screen max-w-full flex-col items-center justify-center overflow-hidden">
           <motion.div
             variants={containerVariant}
             initial={"initial"}

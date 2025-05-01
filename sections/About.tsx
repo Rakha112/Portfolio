@@ -1,7 +1,7 @@
 "use client";
 
 import AnimatedTextBlock from "@/components/AnimatedAboutText";
-import { useScroll } from "framer-motion";
+import { useScroll } from "motion/react";
 import Image from "next/image";
 import { useRef } from "react";
 import ProfilePhoto from "../assets/images/Profile.png";

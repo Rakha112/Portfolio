@@ -2,7 +2,7 @@
 
 import useWindowSize from "@/hooks/useWindowSize";
 import useNavbarStore from "@/store/navbarStore";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { useLenis } from "lenis/react";
 import Close from "./Close";
 import { PerspectiveText } from "./PerspectiveText";

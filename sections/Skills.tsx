@@ -3,7 +3,7 @@
 import SkillGrid from "@/components/SkillGrid";
 import { backEnd, frontEnd, tools } from "@/data/skills";
 import useWindowSize from "@/hooks/useWindowSize";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
 const Skills = () => {

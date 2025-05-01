@@ -3,7 +3,7 @@
 import Card from "@/components/Card";
 import { worksEng } from "@/data/works";
 import useWindowSize from "@/hooks/useWindowSize";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
 const Work = () => {

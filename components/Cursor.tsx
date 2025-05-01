@@ -1,7 +1,7 @@
 "use client";
 
 import useWindowSize from "@/hooks/useWindowSize";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "motion/react";
 import { useEffect } from "react";
 
 const Cursor = () => {
