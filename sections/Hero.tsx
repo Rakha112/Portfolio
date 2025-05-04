@@ -24,7 +24,7 @@ const Hero = () => {
 
   return (
     <section
-      className="flex h-screen w-screen cursor-default flex-col items-center justify-center gap-6 overflow-hidden bg-warnaHitam text-[min(8.5vw,200px)] leading-none text-warnaPutih md:gap-8 lg:gap-12 xl:gap-16"
+      className="bg-warna-hitam text-warna-putih flex h-screen cursor-default flex-col items-center justify-center gap-6 overflow-hidden text-[min(8.5vw,200px)] leading-none md:gap-8 lg:gap-12 xl:gap-16"
       ref={meRef}
       id="about"
     >
@@ -39,7 +39,7 @@ const Hero = () => {
       >
         Hi! I&apos;m{" "}
         <span
-          className={`${playfairDisplay.className} border-rad rounded-full border border-warnaPutih px-4 !italic lg:px-12`}
+          className={`${playfairDisplay.className} border-rad border-warna-putih rounded-full border px-4 italic! lg:px-12`}
         >
           Rakha
         </span>
@@ -54,7 +54,7 @@ const Hero = () => {
         style={{ x: x2 }}
       >
         <span
-          className={`${playfairDisplay.className} border-rad rounded-full border border-warnaPutih px-4 !italic lg:px-12`}
+          className={`${playfairDisplay.className} border-rad border-warna-putih rounded-full border px-4 italic! lg:px-12`}
         >
           Freelance React
         </span>{" "}
@@ -71,7 +71,7 @@ const Hero = () => {
       >
         {" "}
         <span
-          className={`${playfairDisplay.className} border-rad rounded-full border border-warnaPutih px-4 !italic lg:px-12`}
+          className={`${playfairDisplay.className} border-rad border-warna-putih rounded-full border px-4 italic! lg:px-12`}
         >
           React Native Developer
         </span>

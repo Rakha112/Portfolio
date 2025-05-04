@@ -128,18 +128,18 @@ const Form = () => {
   };
 
   return (
-    <div className="relative flex w-full flex-1 flex-col items-center overflow-hidden rounded-3xl bg-warnaHitamCerah">
+    <div className="bg-warna-hitam-cerah relative flex w-full flex-1 flex-col items-center overflow-hidden rounded-3xl">
       <Toast
         toastText={toastText}
         showToast={showToast}
         setShowToast={setShowToast}
       />
-      <h1 className="mt-4 text-center text-[56px] font-semibold leading-none text-warnaPutih lg:text-[100px]">
+      <h1 className="text-warna-putih mt-4 text-center text-[56px] leading-none font-semibold lg:text-[100px]">
         Contact Me
       </h1>
-      <form className="z-[4] w-full p-8">
+      <form className="z-4 w-full p-8">
         <motion.input
-          className="mt-4 w-full rounded-[2rem] bg-warnaHitam p-4 font-geist text-base leading-none text-warnaPutih outline-[unset] placeholder:text-warnaPutih"
+          className="bg-warna-hitam font-geist text-warna-putih placeholder:text-warna-putih mt-4 w-full rounded-[2rem] p-4 text-base leading-none outline-[unset]"
           type="text"
           name="name"
           placeholder="Name"
@@ -160,7 +160,7 @@ const Form = () => {
           }}
         />
         <motion.input
-          className="mt-4 w-full rounded-[2rem] bg-warnaHitam p-4 font-geist text-base leading-none text-warnaPutih outline-[unset] placeholder:text-warnaPutih"
+          className="bg-warna-hitam font-geist text-warna-putih placeholder:text-warna-putih mt-4 w-full rounded-[2rem] p-4 text-base leading-none outline-[unset]"
           type="email"
           name="email"
           placeholder="Email"
@@ -181,7 +181,7 @@ const Form = () => {
           }}
         />
         <motion.textarea
-          className="mt-4 w-full resize-none rounded-2xl bg-warnaHitam p-4 font-geist text-base leading-none text-warnaPutih outline-[unset] placeholder:text-warnaPutih"
+          className="bg-warna-hitam font-geist text-warna-putih placeholder:text-warna-putih mt-4 w-full resize-none rounded-2xl p-4 text-base leading-none outline-[unset]"
           cols={30}
           rows={5}
           name="message"
@@ -203,7 +203,7 @@ const Form = () => {
           }}
         />
         <motion.button
-          className="relative mt-4 flex w-full items-center justify-center overflow-hidden rounded-[2rem] bg-warnaHitam p-4 text-warnaPutih"
+          className="bg-warna-hitam text-warna-putih relative mt-4 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-[2rem] p-4"
           initial="initial"
           animate="hidden"
           whileHover="visible"
@@ -218,7 +218,7 @@ const Form = () => {
           ) : (
             <>
               <motion.div
-                className="absolute z-0 w-full bg-warnaPutih"
+                className="bg-warna-putih absolute z-0 w-full"
                 variants={overlay}
               />
               <div className="[transform-style: preserve-3d] flex h-full w-full flex-col items-center justify-center">
@@ -226,7 +226,7 @@ const Form = () => {
                   Send Message
                 </motion.p>
                 <motion.p
-                  className="pointer-events-none absolute text-warnaHitam"
+                  className="text-warna-hitam pointer-events-none absolute"
                   variants={secondP}
                 >
                   Send Message
@@ -235,11 +235,11 @@ const Form = () => {
             </>
           )}
         </motion.button>
-        <h3 className="mt-4 text-center font-semibold text-warnaPutih">
+        <h3 className="text-warna-putih mt-4 text-center font-semibold">
           Or Email
         </h3>
         <motion.button
-          className="relative mt-4 flex w-full items-center justify-center overflow-hidden rounded-[2rem] bg-warnaHitam p-4 text-warnaPutih"
+          className="bg-warna-hitam text-warna-putih relative mt-4 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-[2rem] p-4"
           initial="initial"
           animate="hidden"
           whileHover="visible"
@@ -250,7 +250,7 @@ const Form = () => {
           }}
         >
           <motion.div
-            className="absolute z-0 w-full bg-warnaPutih"
+            className="bg-warna-putih absolute z-0 w-full"
             variants={overlay}
           />
           <div className="[transform-style: preserve-3d] flex h-full w-full flex-col items-center justify-center">
@@ -258,7 +258,7 @@ const Form = () => {
               rakhawibowo1998@gmail.com
             </motion.p>
             <motion.p
-              className="pointer-events-none absolute text-warnaHitam"
+              className="text-warna-hitam pointer-events-none absolute"
               variants={secondP}
             >
               rakhawibowo1998@gmail.com

@@ -39,7 +39,7 @@ const Cursor = () => {
             left: smoothMouse.x,
             top: smoothMouse.y,
           }}
-          className="pointer-events-none hidden text-base lg:fixed lg:left-0 lg:top-0 lg:z-[9999] lg:flex lg:h-16 lg:w-16 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:transform lg:items-center lg:justify-center lg:rounded-full lg:border lg:border-warnaPutih lg:text-center"
+          className="lg:border-warna-putih pointer-events-none hidden text-base lg:fixed lg:top-0 lg:left-0 lg:z-9999 lg:flex lg:h-16 lg:w-16 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:transform lg:items-center lg:justify-center lg:rounded-full lg:border lg:text-center"
         />
       )}
     </>

@@ -54,7 +54,7 @@ const HiddenNav = () => {
     <AnimatePresence>
       {isNavBarOpen && (
         <motion.div
-          className="fixed bottom-[0.8rem] left-[0.8rem] right-[0.8rem] top-[0.8rem] z-[12] rounded-[2rem] bg-warnaPutih will-change-transform md:left-[unset] md:w-screen md:max-w-[500px]"
+          className="bg-warna-putih fixed top-[0.8rem] right-[0.8rem] bottom-[0.8rem] left-[0.8rem] z-53 rounded-[2rem] will-change-transform md:left-[unset] md:w-screen md:max-w-[500px]"
           initial={{ x: width! < 600 ? width : 520, opacity: 1 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: width! < 600 ? width : 520, opacity: 1 }}

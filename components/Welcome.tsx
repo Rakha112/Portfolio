@@ -58,7 +58,7 @@ const Welcome = () => {
     <>
       {show && (
         // <section className="flex h-screen w-screen max-w-[1920px] items-center justify-center overflow-hidden">
-        <section className="fixed top-0 z-[2] flex h-screen max-h-full w-screen max-w-full flex-col items-center justify-center overflow-hidden">
+        <section className="fixed top-0 z-2 flex h-screen max-h-full w-screen max-w-full flex-col items-center justify-center overflow-hidden">
           <motion.div
             variants={containerVariant}
             initial={"initial"}
@@ -69,7 +69,7 @@ const Welcome = () => {
               <motion.span
                 key={index}
                 variants={revealVariants}
-                className="font-geist text-[18vw] font-extrabold text-warnaPutih"
+                className="font-geist text-warna-putih text-[18vw] font-extrabold"
               >
                 {letter}
               </motion.span>
