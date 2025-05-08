@@ -223,6 +223,14 @@ export const videoSources: VideoSources[] = [
     youtube: "https://youtu.be/M2v7vsHcjHk?si=ij_nsOyaZAn0n63b",
   },
   {
+    video: "/video/Onboarding1.mp4",
+    poster: "/poster/Onboarding1.jpg",
+    slug: "onboarding",
+    title: "Onboarding Screen - Reanimated",
+    code: "https://github.com/Rakha112/react-native-animation/tree/main/season1/src/08-React-Native-Onboarding-Screen",
+    youtube: "https://youtu.be/b9uLJJ3aNjU",
+  },
+  {
     video: "/video/Onboarding2.mp4",
     poster: "/poster/Onboarding2.jpg",
     slug: "onboarding-2",
