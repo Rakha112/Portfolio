@@ -1,4 +1,4 @@
-import { motion, Variants } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 interface PerspectiveTextProps {
   text: string;
@@ -15,18 +15,18 @@ export function PerspectiveText({
 }: PerspectiveTextProps) {
   return (
     <motion.div
-      className="flex h-full w-full flex-col items-center justify-center font-geist font-bold leading-tight [transform-style:preserve-3d]"
+      className="font-geist flex h-full w-full flex-col items-center justify-center leading-tight font-bold [transform-style:preserve-3d]"
       variants={perspectiveText}
     >
       <motion.h1
         variants={firstVariant}
-        className="pointer-events-none my-4 cursor-pointer text-[clamp(3.5rem,10vw,80px)] uppercase text-warnaHitam"
+        className="text-warna-hitam pointer-events-none my-4 cursor-pointer text-[clamp(3.5rem,10vw,80px)] uppercase"
       >
         {text}
       </motion.h1>
       <motion.h1
         variants={secondVariant}
-        className="pointer-events-none absolute my-4 cursor-pointer text-[clamp(3.5rem,10vw,80px)] uppercase text-warnaHitam [transform-origin:bottom_center] [transform:rotateX(-90deg)_translateY(50px)]"
+        className="text-warna-hitam pointer-events-none absolute my-4 [transform-origin:bottom_center] [transform:rotateX(-90deg)_translateY(50px)] cursor-pointer text-[clamp(3.5rem,10vw,80px)] uppercase"
       >
         {text}
       </motion.h1>

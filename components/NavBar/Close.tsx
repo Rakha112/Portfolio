@@ -12,12 +12,12 @@ const Close = () => {
     <div className="flex w-full justify-end p-4">
       <Magnetic>
         <button
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-warnaHitam"
+          className="bg-warna-hitam flex h-12 w-12 items-center justify-center rounded-full"
           onClick={() => {
             closeNavBar();
           }}
         >
-          <div className="pointer-events-auto absolute left-0 top-0 h-full w-full hover:scale-50" />
+          <div className="pointer-events-auto absolute top-0 left-0 h-full w-full hover:scale-50" />
           <Image src={CloseIcon} alt="Close" width={30} height={30} />
         </button>
       </Magnetic>

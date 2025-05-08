@@ -17,10 +17,10 @@ const Ham = () => {
   return (
     <Magnetic>
       <button
-        className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-warnaPutih lg:h-16 lg:w-16"
+        className="bg-warna-putih flex h-12 w-12 cursor-pointer items-center justify-center rounded-full lg:h-16 lg:w-16"
         onClick={onClick}
       >
-        <div className="pointer-events-auto absolute left-0 top-0 h-full w-full hover:scale-150" />
+        <div className="pointer-events-auto absolute top-0 left-0 h-full w-full hover:scale-150" />
         <Image
           priority
           src={HamIcon}

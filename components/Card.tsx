@@ -5,7 +5,7 @@ import PlayIcon from "@/assets/svg/PlayIcon.svg";
 import { Works } from "@/data/works";
 import useWindowSize from "@/hooks/useWindowSize";
 import useVideoPlayerStore from "@/store/videoPlayerStore";
-import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
+import { motion, MotionValue, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
 import { useRef, useState } from "react";
 
@@ -43,12 +43,12 @@ const Card = ({ i, progress, range, targetScale, item }: Props) => {
           scale,
           top: `calc(-5vh + ${i * 25}px)`,
         }}
-        className="relative top-[-25%] flex h-[80vh] w-[90vw] origin-top flex-col-reverse overflow-hidden rounded-3xl border border-warnaHitam bg-warnaHitamCerah will-change-transform lg:flex-row"
+        className="border-warna-hitam bg-warna-hitam-cerah relative top-[-25%] flex h-[80vh] w-[90vw] origin-top flex-col-reverse overflow-hidden rounded-3xl border will-change-transform lg:flex-row"
       >
         <div className="flex flex-1 flex-col justify-between lg:max-w-[50%]">
-          <div className="ml-4 mt-4 lg:ml-8 lg:mt-8">
+          <div className="mt-4 ml-4 lg:mt-8 lg:ml-8">
             <div className="flex gap-[10px]">
-              <h1 className="cursor-default text-[60px] leading-none text-warnaPutih lg:text-[100px]">
+              <h1 className="text-warna-putih cursor-default text-[60px] leading-none lg:text-[100px]">
                 {item.name}
               </h1>
               {item.icon && (
@@ -82,11 +82,11 @@ const Card = ({ i, progress, range, targetScale, item }: Props) => {
                 {item.tags.map((tag, i) => {
                   return (
                     <div
-                      className={`rounded-[100px] border border-warnaPutih px-4 py-1 ${drag ? "cursor-grabbing" : "cursor-grab"}`}
+                      className={`border-warna-putih rounded-[100px] border px-4 py-1 ${drag ? "cursor-grabbing" : "cursor-grab"}`}
                       key={i}
                     >
                       <p
-                        className={`whitespace-nowrap text-warnaPutih ${drag ? "cursor-grabbing" : "cursor-grab"}`}
+                        className={`text-warna-putih whitespace-nowrap ${drag ? "cursor-grabbing" : "cursor-grab"}`}
                       >
                         {tag}
                       </p>
@@ -101,7 +101,7 @@ const Card = ({ i, progress, range, targetScale, item }: Props) => {
               {item.description.map((des, i) => {
                 return (
                   <p
-                    className="cursor-default text-warnaPutih lg:text-[20px]"
+                    className="text-warna-putih cursor-default lg:text-[20px]"
                     key={i}
                   >
                     {des}
@@ -114,7 +114,7 @@ const Card = ({ i, progress, range, targetScale, item }: Props) => {
                 item.buttons.map((button, index) => {
                   return (
                     <button
-                      className="relative flex w-[120px] cursor-pointer items-center justify-between rounded-[20px] border border-warnaPutih py-2 pl-4 pr-2"
+                      className="border-warna-putih relative flex w-[120px] cursor-pointer items-center justify-between rounded-[20px] border py-2 pr-2 pl-4"
                       key={index}
                       onClick={(e) => {
                         e.preventDefault();
@@ -125,7 +125,7 @@ const Card = ({ i, progress, range, targetScale, item }: Props) => {
                         );
                       }}
                     >
-                      <p className="text-[16px] leading-none text-warnaPutih">
+                      <p className="text-warna-putih text-[16px] leading-none">
                         {button.name}
                       </p>
                       <Image
@@ -163,13 +163,13 @@ const Card = ({ i, progress, range, targetScale, item }: Props) => {
                 setVideoPlay(true);
               }}
             >
-              <div className="absolute bottom-[10px] left-[10px] flex cursor-pointer rounded-full bg-warnaHitamCerah px-4 py-1">
-                <p className="text-[14px] leading-none text-warnaPutih">
+              <div className="bg-warna-hitam-cerah absolute bottom-[10px] left-[10px] flex cursor-pointer rounded-full px-4 py-1">
+                <p className="text-warna-putih text-[14px] leading-none">
                   Click to play Demo Video
                 </p>
               </div>
               <motion.div
-                className="absolute bottom-0 left-0 right-0 top-0 flex cursor-pointer items-center justify-center"
+                className="absolute top-0 right-0 bottom-0 left-0 flex cursor-pointer items-center justify-center"
                 initial={{
                   opacity: 0,
                   scale: 0.8,

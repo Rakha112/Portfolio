@@ -1,12 +1,15 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import useAnimationStore from "@/store/animationStore";
+import { motion, useScroll, useTransform } from "motion/react";
 import { Playfair_Display } from "next/font/google";
 import { useEffect, useRef } from "react";
 
 const playfairDisplay = Playfair_Display({ subsets: ["latin"] });
 
 const Hero = () => {
+  const hasAnimated = useAnimationStore((state) => state.hasAnimated);
+  const setHasAnimated = useAnimationStore((state) => state.setHasAnimated);
   const meRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: meRef,
@@ -17,19 +20,21 @@ const Hero = () => {
   const x3 = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   useEffect(() => {
-    if ("scrollRestoration" in window.history) {
-      window.history.scrollRestoration = "manual";
+    if (!hasAnimated) {
+      setTimeout(() => {
+        setHasAnimated(true);
+      }, 5000);
     }
-  }, []);
+  }, [hasAnimated, setHasAnimated]);
 
   return (
     <section
-      className="flex h-screen w-screen cursor-default flex-col items-center justify-center gap-6 overflow-hidden bg-warnaHitam text-[min(8.5vw,200px)] leading-none text-warnaPutih md:gap-8 lg:gap-12 xl:gap-16"
+      className="bg-warna-hitam text-warna-putih flex h-screen cursor-default flex-col items-center justify-center gap-6 overflow-hidden text-[min(8.5vw,200px)] leading-none md:gap-8 lg:gap-12 xl:gap-16"
       ref={meRef}
       id="about"
     >
       <motion.h1
-        initial={{ x: 300, opacity: 0 }}
+        initial={hasAnimated ? false : { x: 300, opacity: 0 }}
         animate={{
           x: 0,
           opacity: 1,
@@ -39,13 +44,13 @@ const Hero = () => {
       >
         Hi! I&apos;m{" "}
         <span
-          className={`${playfairDisplay.className} border-rad rounded-full border border-warnaPutih px-4 !italic lg:px-12`}
+          className={`${playfairDisplay.className} border-rad border-warna-putih rounded-full border px-4 italic! lg:px-12`}
         >
           Rakha
         </span>
       </motion.h1>
       <motion.h1
-        initial={{ x: -300, opacity: 0 }}
+        initial={hasAnimated ? false : { x: -300, opacity: 0 }}
         animate={{
           x: 0,
           opacity: 1,
@@ -54,14 +59,14 @@ const Hero = () => {
         style={{ x: x2 }}
       >
         <span
-          className={`${playfairDisplay.className} border-rad rounded-full border border-warnaPutih px-4 !italic lg:px-12`}
+          className={`${playfairDisplay.className} border-rad border-warna-putih rounded-full border px-4 italic! lg:px-12`}
         >
           Freelance React
         </span>{" "}
         and
       </motion.h1>
       <motion.h1
-        initial={{ x: 300, opacity: 0 }}
+        initial={hasAnimated ? false : { x: 300, opacity: 0 }}
         animate={{
           x: 0,
           opacity: 1,
@@ -71,7 +76,7 @@ const Hero = () => {
       >
         {" "}
         <span
-          className={`${playfairDisplay.className} border-rad rounded-full border border-warnaPutih px-4 !italic lg:px-12`}
+          className={`${playfairDisplay.className} border-rad border-warna-putih rounded-full border px-4 italic! lg:px-12`}
         >
           React Native Developer
         </span>

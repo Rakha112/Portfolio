@@ -1,4 +1,4 @@
-import { MotionValue, motion, useTransform } from "framer-motion";
+import { MotionValue, motion, useTransform } from "motion/react";
 
 type Props = {
   item: string;

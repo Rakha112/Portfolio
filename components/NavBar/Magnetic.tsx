@@ -1,7 +1,7 @@
 "use client";
 
 import useWindowSize from "@/hooks/useWindowSize";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ReactNode, useRef, useState } from "react";
 
 type Props = { children: ReactNode };

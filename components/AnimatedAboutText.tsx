@@ -1,6 +1,6 @@
 import React from "react";
 import AboutText from "./AboutText";
-import { MotionValue } from "framer-motion";
+import { MotionValue } from "motion/react";
 
 type AnimatedTextBlockProps = {
   texts: string[];

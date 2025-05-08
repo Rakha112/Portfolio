@@ -3,7 +3,7 @@
 import Card from "@/components/Card";
 import { worksEng } from "@/data/works";
 import useWindowSize from "@/hooks/useWindowSize";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
 const Work = () => {
@@ -24,7 +24,7 @@ const Work = () => {
     offset: ["start start", "end end"],
   });
   return (
-    <section className="h-full w-screen max-w-full" ref={ref} id="works">
+    <section className="h-full w-screen max-w-full" ref={ref}>
       <div className="mt-8 overflow-hidden will-change-transform">
         <motion.div
           className="flex items-center justify-center"
@@ -33,7 +33,7 @@ const Work = () => {
           {array.map((_, index) => {
             return (
               <h1
-                className="cursor-default text-[25vw] font-bold leading-none text-warnaPutih"
+                className="text-warna-putih cursor-default text-[25vw] leading-none font-bold"
                 key={index}
               >
                 Works.

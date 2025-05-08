@@ -3,7 +3,7 @@
 import SkillGrid from "@/components/SkillGrid";
 import { backEnd, frontEnd, tools } from "@/data/skills";
 import useWindowSize from "@/hooks/useWindowSize";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
 const Skills = () => {
@@ -19,7 +19,7 @@ const Skills = () => {
   const xMobile = useTransform(scrollYProgress, [0, 1], [0, -2000]);
   const xDesktop = useTransform(scrollYProgress, [0, 1], [0, -5000]);
   return (
-    <section className="h-auto w-screen" ref={ref} id="skills">
+    <section className="h-auto w-screen max-w-full" ref={ref} id="skills">
       <div className="overflow-hidden">
         <motion.div
           className="flex items-center justify-center"
@@ -28,7 +28,7 @@ const Skills = () => {
           {array.map((_, index) => {
             return (
               <h1
-                className="cursor-default font-geist text-[25vw] font-bold leading-none text-warnaPutih"
+                className="font-geist text-warna-putih cursor-default text-[25vw] leading-none font-bold"
                 key={index}
               >
                 Skills.
@@ -37,7 +37,7 @@ const Skills = () => {
           })}
         </motion.div>
       </div>
-      <div className="mx-auto h-auto w-screen max-w-[1920px]">
+      <div className="mx-auto h-auto max-w-[1920px]">
         <SkillGrid
           title="FrontEnd"
           items={frontEnd}

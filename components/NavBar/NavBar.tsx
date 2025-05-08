@@ -5,13 +5,18 @@ import {
   useMotionTemplate,
   useScroll,
   useTransform,
-} from "framer-motion";
+} from "motion/react";
 import { useLenis } from "lenis/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Ham from "./Ham";
 import Magnetic from "./Magnetic";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import useAnimationStore from "@/store/animationStore";
 
 const NavBar = () => {
+  const hasAnimated = useAnimationStore((state) => state.hasAnimated);
+  const pathname = usePathname();
   const { scrollYProgress } = useScroll();
   const blurValue = useTransform(scrollYProgress, [0, 0.01], [0, 12]);
   const blur = useMotionTemplate`blur(${blurValue}px)`;
@@ -41,22 +46,24 @@ const NavBar = () => {
 
   return (
     <motion.nav
-      className="fixed left-[0.8rem] right-[0.8rem] top-0 z-10 mt-4 flex items-center justify-between rounded-full p-4 will-change-transform"
+      className="fixed top-0 right-[0.8rem] left-[0.8rem] z-51 mt-4 flex items-center justify-between rounded-full p-4 will-change-transform"
       style={{ backdropFilter: blur, WebkitBackdropFilter: blur }}
-      initial={{ y: -300 }}
+      initial={{ y: pathname === "/animation" ? 0 : -300 }}
       animate={{ y: direction === 0 || direction === -1 ? 0 : -200 }}
       transition={{
-        delay: direction === 0 ? 3.5 : 0,
+        delay: direction === 0 && pathname == "/" && !hasAnimated ? 3.5 : 0,
         duration: 1,
         ease: [0.22, 1, 0.36, 1],
       }}
     >
-      <Magnetic>
-        <div className="font-geist text-[clamp(1.5rem,_1.5vw_+_1rem,_3.125rem)] text-warnaPutih">
-          <div className="pointer-events-auto absolute left-0 right-0 h-full w-full hover:scale-150" />
-          <h1 className="font-geist font-bold">Rakha Wibowo.</h1>
-        </div>
-      </Magnetic>
+      <Link href={"/"}>
+        <Magnetic>
+          <div className="font-geist text-warna-putih text-[clamp(1.5rem,1.5vw+1rem,3.125rem)]">
+            <div className="pointer-events-auto absolute right-0 left-0 h-full w-full hover:scale-150" />
+            <h1 className="font-geist font-bold">Rakha Wibowo.</h1>
+          </div>
+        </Magnetic>
+      </Link>
       <Ham />
     </motion.nav>
   );
