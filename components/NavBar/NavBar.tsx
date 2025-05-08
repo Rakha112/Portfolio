@@ -11,8 +11,11 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Ham from "./Ham";
 import Magnetic from "./Magnetic";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
+import useAnimationStore from "@/store/animationStore";
 
 const NavBar = () => {
+  const hasAnimated = useAnimationStore((state) => state.hasAnimated);
   const pathname = usePathname();
   const { scrollYProgress } = useScroll();
   const blurValue = useTransform(scrollYProgress, [0, 0.01], [0, 12]);
@@ -48,17 +51,19 @@ const NavBar = () => {
       initial={{ y: pathname === "/animation" ? 0 : -300 }}
       animate={{ y: direction === 0 || direction === -1 ? 0 : -200 }}
       transition={{
-        delay: direction === 0 ? 3.5 : 0,
+        delay: direction === 0 && pathname == "/" && !hasAnimated ? 3.5 : 0,
         duration: 1,
         ease: [0.22, 1, 0.36, 1],
       }}
     >
-      <Magnetic>
-        <div className="font-geist text-warna-putih text-[clamp(1.5rem,1.5vw+1rem,3.125rem)]">
-          <div className="pointer-events-auto absolute right-0 left-0 h-full w-full hover:scale-150" />
-          <h1 className="font-geist font-bold">Rakha Wibowo.</h1>
-        </div>
-      </Magnetic>
+      <Link href={"/"}>
+        <Magnetic>
+          <div className="font-geist text-warna-putih text-[clamp(1.5rem,1.5vw+1rem,3.125rem)]">
+            <div className="pointer-events-auto absolute right-0 left-0 h-full w-full hover:scale-150" />
+            <h1 className="font-geist font-bold">Rakha Wibowo.</h1>
+          </div>
+        </Magnetic>
+      </Link>
       <Ham />
     </motion.nav>
   );

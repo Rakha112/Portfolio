@@ -87,7 +87,10 @@ const Animation = () => {
   };
 
   return (
-    <section className="my-16 flex max-w-screen flex-col items-center overflow-hidden">
+    <section
+      className="my-16 flex max-w-screen flex-col items-center overflow-hidden"
+      id="works"
+    >
       <div className="mb-4 flex flex-col">
         <h1 className="bg-opacity-50 from-warna-putih font-geist bg-gradient-to-b to-neutral-400 bg-clip-text text-center text-5xl leading-none font-bold text-transparent transform-3d sm:text-7xl md:text-[6.5rem] lg:text-[8rem] xl:text-[10rem]">
           React Native

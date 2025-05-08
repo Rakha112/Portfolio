@@ -3,8 +3,10 @@
 import { motion } from "motion/react";
 import { useLenis } from "lenis/react";
 import { useEffect, useLayoutEffect, useState } from "react";
+import useAnimationStore from "@/store/animationStore";
 
 const Welcome = () => {
+  const hasAnimated = useAnimationStore((state) => state.hasAnimated);
   const [show, setSHow] = useState(true);
   const lenis = useLenis();
 
@@ -61,7 +63,7 @@ const Welcome = () => {
         <section className="fixed top-0 z-2 flex h-screen max-h-full w-screen max-w-full flex-col items-center justify-center overflow-hidden">
           <motion.div
             variants={containerVariant}
-            initial={"initial"}
+            initial={hasAnimated ? false : "initial"}
             animate={"animate"}
             className="flex w-screen flex-row items-center justify-center overflow-hidden"
           >

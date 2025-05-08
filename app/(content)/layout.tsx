@@ -3,8 +3,8 @@ import Cursor from "@/components/Cursor";
 import BackDropNav from "@/components/NavBar/BackDropNav";
 import HiddenNav from "@/components/NavBar/HiddenNav";
 import NavBar from "@/components/NavBar/NavBar";
+import SmoothScroll from "@/components/SmoothScroll";
 import Footer from "@/sections/Footer";
-import ReactLenis from "lenis/react";
 import { Geist } from "next/font/google";
 
 const geistSans = Geist({
@@ -24,7 +24,7 @@ export default function RootLayout({
         <NavBar />
         <HiddenNav />
         <BackDropNav />
-        <ReactLenis root>{children}</ReactLenis>
+        <SmoothScroll>{children}</SmoothScroll>
         <Footer />
         <Modal />
       </body>

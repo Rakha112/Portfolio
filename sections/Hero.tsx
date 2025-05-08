@@ -1,5 +1,6 @@
 "use client";
 
+import useAnimationStore from "@/store/animationStore";
 import { motion, useScroll, useTransform } from "motion/react";
 import { Playfair_Display } from "next/font/google";
 import { useEffect, useRef } from "react";
@@ -7,6 +8,8 @@ import { useEffect, useRef } from "react";
 const playfairDisplay = Playfair_Display({ subsets: ["latin"] });
 
 const Hero = () => {
+  const hasAnimated = useAnimationStore((state) => state.hasAnimated);
+  const setHasAnimated = useAnimationStore((state) => state.setHasAnimated);
   const meRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: meRef,
@@ -17,10 +20,12 @@ const Hero = () => {
   const x3 = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   useEffect(() => {
-    if ("scrollRestoration" in window.history) {
-      window.history.scrollRestoration = "manual";
+    if (!hasAnimated) {
+      setTimeout(() => {
+        setHasAnimated(true);
+      }, 5000);
     }
-  }, []);
+  }, [hasAnimated, setHasAnimated]);
 
   return (
     <section
@@ -29,7 +34,7 @@ const Hero = () => {
       id="about"
     >
       <motion.h1
-        initial={{ x: 300, opacity: 0 }}
+        initial={hasAnimated ? false : { x: 300, opacity: 0 }}
         animate={{
           x: 0,
           opacity: 1,
@@ -45,7 +50,7 @@ const Hero = () => {
         </span>
       </motion.h1>
       <motion.h1
-        initial={{ x: -300, opacity: 0 }}
+        initial={hasAnimated ? false : { x: -300, opacity: 0 }}
         animate={{
           x: 0,
           opacity: 1,
@@ -61,7 +66,7 @@ const Hero = () => {
         and
       </motion.h1>
       <motion.h1
-        initial={{ x: 300, opacity: 0 }}
+        initial={hasAnimated ? false : { x: 300, opacity: 0 }}
         animate={{
           x: 0,
           opacity: 1,

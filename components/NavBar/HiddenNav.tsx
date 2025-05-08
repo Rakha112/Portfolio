@@ -2,12 +2,17 @@
 
 import useWindowSize from "@/hooks/useWindowSize";
 import useNavbarStore from "@/store/navbarStore";
-import { AnimatePresence, motion } from "motion/react";
 import { useLenis } from "lenis/react";
+import { AnimatePresence, motion } from "motion/react";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect } from "react";
 import Close from "./Close";
 import { PerspectiveText } from "./PerspectiveText";
 
 const HiddenNav = () => {
+  const router = useRouter();
+  const pathname = usePathname();
   const isNavBarOpen = useNavbarStore((state) => state.isNavBarOpen);
   const closeNavBar = useNavbarStore((state) => state.closeNavBar);
   const lenis = useLenis();
@@ -50,6 +55,14 @@ const HiddenNav = () => {
     },
   };
 
+  useEffect(() => {
+    if (isNavBarOpen) {
+      lenis?.stop();
+    } else {
+      lenis?.start();
+    }
+  }, [isNavBarOpen, lenis]);
+
   return (
     <AnimatePresence>
       {isNavBarOpen && (
@@ -70,8 +83,12 @@ const HiddenNav = () => {
               animate="hidden"
               whileHover="visible"
               whileFocus="visible"
+              className="cursor-pointer"
               onClick={() => {
                 closeNavBar();
+                if (pathname !== "/") {
+                  router.push("/");
+                }
                 setTimeout(() => {
                   lenis?.scrollTo("#about", { duration: 3 });
                 }, 500);
@@ -89,8 +106,12 @@ const HiddenNav = () => {
               animate="hidden"
               whileHover="visible"
               whileFocus="visible"
+              className="cursor-pointer"
               onClick={() => {
                 closeNavBar();
+                if (pathname !== "/") {
+                  router.push("/");
+                }
                 setTimeout(() => {
                   lenis?.scrollTo("#skills", { duration: 3 });
                 }, 500);
@@ -108,8 +129,12 @@ const HiddenNav = () => {
               animate="hidden"
               whileHover="visible"
               whileFocus="visible"
+              className="cursor-pointer"
               onClick={() => {
                 closeNavBar();
+                if (pathname !== "/") {
+                  router.push("/");
+                }
                 setTimeout(() => {
                   lenis?.scrollTo("#works", { duration: 3 });
                 }, 500);
@@ -127,8 +152,12 @@ const HiddenNav = () => {
               animate="hidden"
               whileHover="visible"
               whileFocus="visible"
+              className="cursor-pointer"
               onClick={() => {
                 closeNavBar();
+                if (pathname !== "/") {
+                  router.push("/");
+                }
                 setTimeout(() => {
                   lenis?.scrollTo("#contact", { duration: 3 });
                 }, 500);
@@ -141,6 +170,23 @@ const HiddenNav = () => {
                 secondVariant={secondP}
               />
             </motion.button>
+            <Link href={"/animation"}>
+              <motion.button
+                initial="initial"
+                animate="hidden"
+                whileHover="visible"
+                whileFocus="visible"
+                className="cursor-pointer"
+                onClick={closeNavBar}
+              >
+                <PerspectiveText
+                  text="Animation"
+                  perspectiveText={perspectiveText}
+                  firstVariant={firstP}
+                  secondVariant={secondP}
+                />
+              </motion.button>
+            </Link>
           </div>
         </motion.div>
       )}
